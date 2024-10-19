@@ -1,19 +1,18 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+        "./app/**/*.{js,ts,jsx,tsx}", // For Next.js 13+
+    ],
+    theme: {
+        extend: {
+            colors: {
+                DEFAULT: "#000",
+                100: "#000319",
+                softbg: "#000311",
+            },
+        },
     },
-  },
-  plugins: [],
+    plugins: [],
 };
-export default config;
