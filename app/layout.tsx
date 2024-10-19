@@ -29,10 +29,12 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <div className="bg-softbg relative   flex justify-center items-center flex-col  mx-auto px-5 sm:px-10 overflow-hidden">
+                <div className=" relative   overflow-hidden">
+                    <div className="text-white relative flex justify-center items-center flex-col  mx-auto px-5 sm:px-10 w-full  bg-[#042366]"></div>
                     <Navbar />
                     {children}
                 </div>
+                <div className="w-full h-10 bg-red-400"></div>
             </body>
         </html>
     );
