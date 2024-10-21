@@ -1,25 +1,19 @@
 import React from "react";
 import OutlineBtn from "@/components/buttons/OutlineBtn";
 import PrimaryBtn from "@/components/buttons/PrimaryBtn";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-    Facebook,
-    Github,
-    Instagram,
-    Linkedin,
-    MessageCircle,
-} from "lucide-react";
+import { Github, Linkedin, MessageCircle } from "lucide-react";
 const Footer = () => {
     return (
-        <div className="relative " id="contact">
-            <div className="h-40 md:h-10 bg-white"></div>
-            {/* White card positioned in the middle */}
-            <div className="absolute w-[90%] md:w-[80%] left-1/2 transform -translate-x-1/2 -top-5 md:-top-10 bg-white text-black flex flex-col gap-5 md:flex-row border-2 rounded-md py-10 px-5 justify-center items-center">
-                <h1 className="font-bold">Start a Project</h1>
-                <p className=" md:w-2/4 text-center">
+        <div className=" relative" id="contact">
+            <div className="w-[90%] md:w-[80%]  mx-auto relative border-t-[3px] border-t-blue-400 bg-white -mb-10 z-10 p-4 rounded-md">
+                <h1 className="font-bold text-lg">Start a Project</h1>
+                <p className=" md:w-2/4 text-start md:text-center">
                     Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-3 text-sm md:text-md my-2 ">
                     <OutlineBtn
                         href="mailto:osamariaz369@gmail.com"
                         classname={"rounded-full "}
@@ -32,13 +26,19 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="bg-[#151C24] h-72">
-                <div className=" flex flex-col gap-10 justify-center items-center h-full py-5">
+            <div className="bg-[#151C24] h-72 flex justify-center items-center relative ">
+                <div className=" flex flex-col gap-10 justify-center items-center h-48 py-5">
                     <p className="text-white text-md ">
                         �� 2024 by Usama. All rights reserved.
                     </p>
 
-                    <div className="w-2/3 md:w-1/3  flex justify-evenly items-center ">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ amount: 0.2 }}
+                        transition={{ duration: 0.5 }}
+                        className="w-2/3 md:w-1/3  flex justify-evenly items-center "
+                    >
                         <Link
                             href={"https://github.com/usama-666"}
                             rel="noopener noreferrer"
@@ -67,7 +67,7 @@ const Footer = () => {
                                 <MessageCircle className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" />
                             </div>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
