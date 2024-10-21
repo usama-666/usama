@@ -85,7 +85,7 @@ const Testimonials = () => {
                 Here are some of my recent Client Reviews that I've worked with.
             </p>
             <Swiper
-                spaceBetween={5} // Space between slides
+                spaceBetween={1} // Space between slides
                 loop={true} // Enable infinite loop
                 autoplay={{
                     delay: 0, // No delay between scrolls
@@ -98,15 +98,15 @@ const Testimonials = () => {
                     // Adjust slide per view based on screen width
                     640: {
                         slidesPerView: 1,
-                        spaceBetween: 10,
+                        spaceBetween: 5,
                     },
                     768: {
                         slidesPerView: 2,
-                        spaceBetween: 20,
+                        spaceBetween: 5,
                     },
                     1024: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
+                        spaceBetween: 5,
                     },
                 }}
             >

@@ -22,27 +22,26 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const pathname = usePathname();
     return (
         <html lang="en">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <AnimatePresence mode="wait">
+                {/* <AnimatePresence mode="wait">
                     <motion.div
                         key={pathname}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.5 }}
-                    >
-                        <div className=" relative   overflow-hidden">
-                            <div className="text-white relative flex justify-center items-center flex-col  mx-auto px-5 sm:px-10 w-full  bg-[#042366]"></div>
-                            <Navbar />
-                            {children}
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+                    > */}
+                <div className=" relative   overflow-hidden">
+                    <div className="text-white relative flex justify-center items-center flex-col  mx-auto px-5 sm:px-10 w-full  bg-[#042366]"></div>
+                    <Navbar />
+                    {children}
+                </div>
+                {/* </motion.div>
+                </AnimatePresence> */}
             </body>
         </html>
     );

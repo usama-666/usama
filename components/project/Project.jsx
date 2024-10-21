@@ -1,11 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "../cards/ProjectCard";
 import OutlineBtn from "../buttons/OutlineBtn";
 import Wrapper from "../global/Wrapper";
 import { motion } from "framer-motion";
 
 const Project = () => {
+    const [showProject, setShowProject] = useState(false);
+
+    const toggleProject = () => {
+        setShowProject(!showProject);
+    };
     return (
         <Wrapper width="w-[95%] md:w-[70%]">
             <div
@@ -71,7 +76,7 @@ const Project = () => {
                         transition={{ duration: 1 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ amount: 0.2 }}
-                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2"
+                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 hidden md:flex"
                     >
                         <ProjectCard />
                     </motion.div>
@@ -81,7 +86,7 @@ const Project = () => {
                         transition={{ duration: 1 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ amount: 0.2 }}
-                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2"
+                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 hidden md:flex"
                     >
                         <ProjectCard />
                     </motion.div>
@@ -91,18 +96,55 @@ const Project = () => {
                         transition={{ duration: 1 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ amount: 0.2 }}
-                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2"
+                        className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 hidden md:flex"
                     >
                         <ProjectCard />
                     </motion.div>
+
+                    {showProject && (
+                        <>
+                            <motion.div
+                                initial={{ opacity: 0, y: 150 }}
+                                // animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.2 }}
+                                className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 md:hidden"
+                            >
+                                <ProjectCard />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 150 }}
+                                // animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.2 }}
+                                className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 md:hidden"
+                            >
+                                <ProjectCard />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 150 }}
+                                // animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.2 }}
+                                className="row-span-1 md:row-span-1 col-span-6 md:col-span-2 md:hidden"
+                            >
+                                <ProjectCard />
+                            </motion.div>
+                        </>
+                    )}
                 </div>
 
-                <div className="flex justify-center my-5">
+                <div className=" flex md:hidden justify-center my-5">
                     <OutlineBtn
-                        href="/projects"
+                        // href="/projects"
                         classname={"px-3 py-2 rounded-md text-sm md:text-lg "}
+                        onclick={toggleProject}
                     >
-                        View More Projects
+                        {showProject ? "Hide Psrojects" : "View More Projects"}
+                        {/* View More Projects */}
                     </OutlineBtn>
                 </div>
             </div>
